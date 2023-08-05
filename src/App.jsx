@@ -4,10 +4,8 @@ import ContactList from './components/ContactList';
 
 function App() {
 
-const contacts = [
-  // Just placeholder contact info
-  { name: "John Doe", email: "john@example.com", phone: "123-456-7890" },
-  ]; 
+  // removed placeholder info
+const contacts = []; 
 
   console.log("Contacts: ", contacts);
 
