@@ -1,17 +1,9 @@
 import { useState } from "react";
 import ContactRow from "./ContactRow";
-
-// At the top of you ContactList.jsx file, import the useEffect hook from react.
 import {useEffect} from 'react';
 
-// commented out dummyContacts
-/* const dummyContacts = [
-  { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
-  { id: 2, name: "C-3PO", phone: "333-333-3333", email: "c3po@droids.com" },
-  { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
-]; */
-
-export default function ContactList() {
+// Passed the setSelectedContactId into ContactList component - aka we deconstructed the function from props from within the ContactList component 
+export default function ContactList({ setSelectedContactId }) {
 
 // changed useState(dummyContacts) -> useState([]) with an empty array
     const [contacts, setContacts] = useState([]);
@@ -47,7 +39,8 @@ console.log(contacts);
           <td>Phone</td>
         </tr>
         {contacts.map((contact) => {
-          return <ContactRow key={contact.id} contact={contact} />;
+          // Passed setSelectedContactId as a prop to ContactRow
+          return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId}/>;
         })}
       </tbody>
     </table>
