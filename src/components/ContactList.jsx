@@ -23,26 +23,28 @@ export default function ContactList({ setSelectedContactId }) {
   },[]);
 
   // Console log your contacts state variable to double check that the data is held in state.
-console.log(contacts);
+// console.log(contacts);
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th colSpan="3">Contact List</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Phone</td>
-        </tr>
-        {contacts.map((contact) => {
-          // Passed setSelectedContactId as a prop to ContactRow
-          return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId}/>;
-        })}
-      </tbody>
-    </table>
-  );
+return (
+  // added styling
+  <table style={{fontSize: "15px"}}>
+    <thead>
+      <tr>
+        <th colSpan="3" style={{fontSize: "25px"}}>Contact List</th>
+      </tr>
+    </thead>
+    <tbody>
+  {/* added styling */}
+      <tr style={{fontWeight: "bold"}}>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+      </tr>
+      {contacts.map((contact) => {
+        // passed setSelectedContactId as a prop to ContactRow
+        return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId}/>;
+      })}
+    </tbody>
+  </table>
+);
 }

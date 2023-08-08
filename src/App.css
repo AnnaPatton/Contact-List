@@ -3,7 +3,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+
+    /* added styling */
+    border: 1px solid #9198e5;
+    border-radius: 10px;
+    background: linear-gradient(#e66465, #9198e5);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* added hover */
+  #root:hover {
+    filter: drop-shadow(0 0 2em #323232);
+  }
 
 .logo {
   height: 6em;
