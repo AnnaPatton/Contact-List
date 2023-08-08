@@ -14,22 +14,20 @@ export default function App() {
 
     const [selectedContactId, setSelectedContactId] = useState(null);
   
-    // removed placeholder info
-  const contacts = []; 
-  
-    console.log("Contacts: ", contacts);
+  // const contacts = []; 
+  // console.log("Contacts: ", contacts);
   
    {/* Conditionally render ContactList comp if selectedContactId = null 
    * Write a ternary statement that evaluates the selectedContactId. If it is a truthy value, for now, render a div with a short message. If selectedContactId is falsey, render the ContactList component.*/}
   
   return (
-      <>
-        {selectedContactId ? (
-          <div>Selected Contact View</div>
-        ) : (
-          // passing the setSelectedContactId to the setSelectedContactId component
-          <ContactList setSelectedContactId={setSelectedContactId}/>
-        )}
-      </>
-    );
-  } 
+    <>
+      {selectedContactId ? (
+        // replaced div then passed the selectedContactId and setSelectedContactId 
+        <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId} />
+      ) : (
+        <ContactList setSelectedContactId={setSelectedContactId} />
+      )}
+    </>
+  );
+}
